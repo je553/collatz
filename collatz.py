@@ -15,11 +15,14 @@ def validate(inp):
         int(inp) + 1.0
         return int(inp)
     except ValueError:
-        print('That\'s not an integer. Enter a whole number with no decimals.')
-        return 0
+        if inp == 'exit':
+            return inp
+        else:
+            print('That\'s not an integer. Enter a whole number with no decimals.')
+            return 0
 
 while True:
-    print('Enter an integer and see the Collatz sequence at work.')
+    print('Enter an integer and see the Collatz sequence at work (or type \'exit\' to quit).')
     num = validate(input())
     if num == 'exit':
         sys.exit()
