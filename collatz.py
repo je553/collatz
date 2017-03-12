@@ -29,6 +29,9 @@ while True:
     elif num == 0:
         continue
     while num != 1:
-        print(collatz(num), end=',')
+        if collatz(num) == 1:
+            print(collatz(num))
+        else:
+            print(collatz(num), end=',')
         num = collatz(num)
     print('\n')
